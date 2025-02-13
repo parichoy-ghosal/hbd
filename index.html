@@ -46,27 +46,19 @@
             from { transform: translateY(-10vh); }
             to { transform: translateY(100vh); }
         }
-        #secret-btn {
-            background: #ff4081;
-            color: white;
-            padding: 10px 20px;
-            font-size: 1.2em;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
+        audio {
             position: absolute;
             bottom: 20vh;
             left: 50%;
             transform: translateX(-50%);
-            animation: fadeIn 2s ease-in-out 2s;
         }
-        #secret-note {
+        #friendship-message {
             display: none;
             background: white;
             padding: 15px;
             border-radius: 10px;
             position: absolute;
-            top: 50%;
+            top: 60%;
             left: 50%;
             transform: translate(-50%, -50%);
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -75,10 +67,12 @@
 </head>
 <body>
     <h1>🎂 Happy Birthday 🎉</h1>
-    <h2>!!!!!Miss Prithvi Vadiraj Dambal!!!!!</h2>
-    <button id="secret-btn">Click for a Surprise!</button>
-    <div id="secret-note">You're amazing! Wishing you all the happiness in the world! 🎁</div>
-
+    <h2>Miss Prithvi Vadiraj Dambal</h2>
+    <audio controls>
+        <source src="happy_birthday_song.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <div id="friendship-message">"A true friend is the greatest gift of life. Wishing my coffee joy, laughter, and endless happiness on your special day, cheers! [P.S: I am not that good with expressing through words, but I am just greatful to you and glad that you are here!!!" 💖</div>
     <script>
         function createConfetti() {
             for (let i = 0; i < 50; i++) {
@@ -94,9 +88,8 @@
         createConfetti();
         setInterval(createConfetti, 4000);
 
-        document.getElementById("secret-btn").addEventListener("click", function() {
-            document.getElementById("secret-note").style.display = "block";
+        document.querySelector("audio").addEventListener("play", function() {
+            document.getElementById("friendship-message").style.display = "block";
         });
     </script>
 </body>
-</html>
