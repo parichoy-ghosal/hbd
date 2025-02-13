@@ -46,11 +46,19 @@
             from { transform: translateY(-10vh); }
             to { transform: translateY(100vh); }
         }
-        audio {
+             #secret-btn {
+            background: #ff4081;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
             position: absolute;
             bottom: 20vh;
             left: 50%;
             transform: translateX(-50%);
+            animation: fadeIn 2s ease-in-out 2s;
         }
         #friendship-message {
             display: none;
@@ -68,10 +76,7 @@
 <body>
     <h1>🎂 Happy Birthday 🎉</h1>
     <h2>Miss Prithvi Vadiraj Dambal</h2>
-    <audio controls>
-        <source src="happy_birthday_song.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
+    <button id="secret-btn">Click for a Surprise!</button>
     <div id="friendship-message">"A true friend is the greatest gift of life. Wishing my coffee joy, laughter, and endless happiness on your special day, cheers! [P.S: I am not that good with expressing through words, but I am just greatful to you and glad that you are here!!!" 💖</div>
     <script>
         function createConfetti() {
