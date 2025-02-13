@@ -23,7 +23,7 @@
             from { opacity: 0; }
             to { opacity: 1; }
         }
-         h2 {
+        h2 {
             font-size: 1.5em;
             margin-top: 10vh;
             color: #fff;
@@ -46,7 +46,7 @@
             from { transform: translateY(-10vh); }
             to { transform: translateY(100vh); }
         }
-             #secret-btn {
+        #secret-btn {
             background: #ff4081;
             color: white;
             padding: 10px 20px;
@@ -75,9 +75,10 @@
 </head>
 <body>
     <h1>🎂 Happy Birthday 🎉</h1>
-    <h2>Miss Prithvi Vadiraj Dambal</h2>
+    <h2>Miss Prithvi Dambal!</h2>
     <button id="secret-btn">Click for a Surprise!</button>
-    <div id="friendship-message">"A true friend is the greatest gift of life. Wishing my coffee joy, laughter, and endless happiness on your special day, cheers! [P.S: I am not that good with expressing through words, but I am just greatful to you and glad that you are here!!!" 💖</div>
+    <div id="friendship-message">"A true friend is the greatest gift of life. Wishing my coffee, laughter, and endless happiness on your special day! Thank you for being there!" 💖</div>
+    <audio id="birthday-audio" src="happy_birthday_song.mp3"></audio>
     <script>
         function createConfetti() {
             for (let i = 0; i < 50; i++) {
@@ -93,8 +94,11 @@
         createConfetti();
         setInterval(createConfetti, 4000);
 
-        document.querySelector("audio").addEventListener("play", function() {
-            document.getElementById("friendship-message").style.display = "block";
+        document.getElementById("secret-btn").addEventListener("click", function() {
+            let message = document.getElementById("friendship-message");
+            message.style.display = "block";
+            document.getElementById("birthday-audio").play();
         });
     </script>
 </body>
+</html>
